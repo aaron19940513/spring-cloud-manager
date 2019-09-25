@@ -1,0 +1,44 @@
+server:
+  port: 8083
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_ZONE_HOST:localhost}:${EUREKA_ZONE_PORT:8761}/eureka/
+
+spring:
+  application:
+    name: authentication-server
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    ##password: ${REDIS_PASSWORD:}
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/sc_auth?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  security:
+    oauth2:
+      jwt:
+        signingKey: 123456
+
+logging:
+  level:
+    org.springframework.web: debug
+    org.springframework.security: DEBUG
+    org.apache.ibatis: debug
+    java.sql.PreparedStatement: debug
+  path: logs/
+  file:
+    max-size: 1GB
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

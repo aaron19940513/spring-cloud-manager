@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/aaron19940513/spring-cloud-config.git
+          #username:
+          #password:
+          search-paths: SC-BOOK-CONFIG
