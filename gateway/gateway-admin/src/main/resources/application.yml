@@ -9,30 +9,30 @@ eureka:
 spring:
   application:
     name: gateway-admin
-  rabbitmq:
-    host: ${RABBIT_MQ_HOST:localhost}
-    port: ${RABBIT_MQ_PORT:5672}
-    username: ${RABBIT_MQ_USERNAME:guest}
-    password: ${RABBIT_MQ_PASSWORD:guest}
+#  rabbitmq:
+#    host: ${RABBIT_MQ_HOST:localhost}
+#    port: ${RABBIT_MQ_PORT:5672}
+#    username: ${RABBIT_MQ_USERNAME:guest}
+#    password: ${RABBIT_MQ_PASSWORD:guest}
   redis:
     host: ${REDIS_HOST:localhost}
     port: ${REDIS_PORT:6379}
     #password: ${REDIS_PASSWORD:}
   datasource:
-    url: jdbc:${DATASOURCE_DB:postgresql}://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:5432}/sc_gateway
-    username: ${DATASOURCE_USERNAME:postgres}
-    password: ${DATASOURCE_PASSWORD:postgres}
-    driver-class-name: ${DATASOURCE_DRIVER:org.postgresql.Driver}
+    url: jdbc:${DATASOURCE_DB:mysql}://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:3306}/sc_gateway?characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    username: ${DATASOURCE_USERNAME:root}
+    password: ${DATASOURCE_PASSWORD:1234}
+    driver-class-name: ${DATASOURCE_DRIVER:com.mysql.jdbc.Driver}
 
-  zipkin:
-    enabled: true
-    sender:
-      type: rabbit
-  sleuth:
-    enabled: true
-    http:
-      legacy:
-        enabled: true
+#  zipkin:
+#    enabled: true
+#    sender:
+#      type: rabbit
+#  sleuth:
+#    enabled: true
+#    http:
+#      legacy:
+#        enabled: true
 
 management:
   endpoints:

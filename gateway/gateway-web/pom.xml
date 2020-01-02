@@ -18,6 +18,12 @@
     </parent>
 
     <dependencies>
+        <!--core基础类库-->
+        <dependency>
+            <groupId>com.springcloud.manager</groupId>
+            <artifactId>core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!--api网关-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -33,6 +39,23 @@
             <groupId>com.springcloud.manager</groupId>
             <artifactId>authentication-client</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+        <!--数据库-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.39</version>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <scope>test</scope>
+            <version>5.1.3</version>
         </dependency>
     </dependencies>
 

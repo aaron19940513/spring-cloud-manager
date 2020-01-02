@@ -1,5 +1,5 @@
 server:
-  port: ${SERVER_PORT:8082}
+  port: ${SERVER_PORT:8443}
 
 eureka:
   client:
@@ -9,6 +9,11 @@ eureka:
 spring:
   application:
     name: ${GATEWAY_NAME:gateway-web}
+  datasource:
+    url: jdbc:mysql://server-mysql:3306/sc_admin?characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.jdbc.Driver
   redis:
     host: ${REDIS_HOST:localhost}
     port: ${REDIS_PORT:6379}
