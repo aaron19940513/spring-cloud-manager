@@ -14,7 +14,7 @@ spring:
     port: 6379
     ##password: ${REDIS_PASSWORD:}
   datasource:
-    url: jdbc:mysql://localhost:3306/sc_auth?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/sc_auth?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver

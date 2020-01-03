@@ -3,7 +3,6 @@ package com.springcloud.book.provider.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import com.springcloud.book.provider.model.CachedUser;
-import com.springcloud.book.provider.model.User;
 import com.springcloud.book.provider.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
