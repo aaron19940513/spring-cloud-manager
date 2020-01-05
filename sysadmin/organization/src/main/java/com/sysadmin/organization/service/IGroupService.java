@@ -12,7 +12,7 @@ public interface IGroupService {
      * @param id
      * @return
      */
-    Group get(long id);
+    Group get(Integer id);
 
     /**
      * 新增用户组
@@ -20,7 +20,7 @@ public interface IGroupService {
      * @param group
      * @return
      */
-    long add(Group group);
+    Integer add(Group group);
 
     /**
      * 查询用户组
@@ -34,7 +34,7 @@ public interface IGroupService {
      *
      * @return
      */
-    List<Group> queryByParentId(long id);
+    List<Group> queryByParentId(Integer id);
 
     /**
      * 更新用户组信息
@@ -48,5 +48,5 @@ public interface IGroupService {
      *
      * @param id
      */
-    void delete(long id);
+    void delete(Integer id);
 }

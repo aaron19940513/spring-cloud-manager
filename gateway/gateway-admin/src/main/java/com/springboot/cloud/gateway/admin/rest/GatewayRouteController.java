@@ -3,9 +3,9 @@ package com.springboot.cloud.gateway.admin.rest;
 import com.springboot.cloud.common.core.entity.vo.Result;
 import com.springboot.cloud.gateway.admin.entity.form.GatewayRouteForm;
 import com.springboot.cloud.gateway.admin.entity.form.GatewayRouteQueryForm;
-import com.springboot.cloud.gateway.admin.entity.vo.GatewayRouteVo;
 import com.springboot.cloud.gateway.admin.entity.param.GatewayRouteQueryParam;
 import com.springboot.cloud.gateway.admin.entity.po.GatewayRoute;
+import com.springboot.cloud.gateway.admin.entity.vo.GatewayRouteVo;
 import com.springboot.cloud.gateway.admin.service.IGatewayRouteService;
 import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
@@ -35,20 +35,20 @@ public class GatewayRouteController {
     }
 
     @ApiOperation(value = "删除网关路由", notes = "根据url的id来指定删除对象")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "网关路由ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "网关路由ID", required = true, dataType = "Integer")
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable long id) {
+    public Result delete(@PathVariable Integer id) {
         gatewayRoutService.delete(id);
         return Result.success();
     }
 
     @ApiOperation(value = "修改网关路由", notes = "修改指定网关路由信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "网关路由ID", required = true, dataType = "long"),
+            @ApiImplicitParam(name = "id", value = "网关路由ID", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "gatewayRoutForm", value = "网关路由实体", required = true, dataType = "GatewayRouteForm")
     })
     @PutMapping(value = "/{id}")
-    public Result update(@PathVariable long id, @Valid @RequestBody GatewayRouteForm gatewayRoutForm) {
+    public Result update(@PathVariable Integer id, @Valid @RequestBody GatewayRouteForm gatewayRoutForm) {
         GatewayRoute gatewayRout = gatewayRoutForm.toPo(GatewayRoute.class);
         gatewayRout.setId(id);
         gatewayRoutService.update(gatewayRout);
@@ -56,9 +56,9 @@ public class GatewayRouteController {
     }
 
     @ApiOperation(value = "获取网关路由", notes = "根据id获取指定网关路由信息")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "网关路由ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "网关路由ID", required = true, dataType = "Integer")
     @GetMapping(value = "/{id}")
-    public Result get(@PathVariable long id) {
+    public Result get(@PathVariable Integer id) {
         log.info("get with id:{}", id);
         return Result.success(new GatewayRouteVo(gatewayRoutService.get(id)));
     }
@@ -75,7 +75,7 @@ public class GatewayRouteController {
     }
 
     @ApiOperation(value = "搜索网关路由", notes = "根据条件查询网关路由信息")
-    @ApiImplicitParam(name = "gatewayRoutQueryForm", value = "网关路由查询参数", required = true, dataType = "GatewayRouteQueryForm")
+    @ApiImplicitParam(name = "gatewayRouteQueryForm", value = "网关路由查询参数", required = true, dataType = "GatewayRouteQueryForm")
     @ApiResponses(
             @ApiResponse(code = 200, message = "处理成功", response = Result.class)
     )

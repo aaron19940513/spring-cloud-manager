@@ -11,7 +11,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients(basePackages = "com.springboot.cloud.auth.client")
 @EnableCircuitBreaker
 public class GatewayApplication {
+
     public static void main(String[] args) {
+
         SpringApplication.run(GatewayApplication.class, args);
+
     }
 }

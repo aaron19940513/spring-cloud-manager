@@ -29,26 +29,26 @@ public class GatewayRouteService implements IGatewayRouteService {
     private StringRedisTemplate stringRedisTemplate;
 
     @Override
-    public long add(GatewayRoute gatewayRoute) {
-        long gatewayId = gatewayRouteMapper.insert(gatewayRoute);
+    public Integer add(GatewayRoute gatewayRoute) {
+        Integer gatewayId = gatewayRouteMapper.insert(gatewayRoute);
         stringRedisTemplate.opsForValue().set(GATEWAY_ROUTES + gatewayRoute.getId(), toJson(new GatewayRouteVo(gatewayRoute)));
         return gatewayId;
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Integer id) {
         gatewayRouteMapper.delete(id);
         stringRedisTemplate.delete(GATEWAY_ROUTES + id);
     }
 
     @Override
     public void update(GatewayRoute gatewayRoute) {
-        stringRedisTemplate.delete(GATEWAY_ROUTES + gatewayRoute.getId());
+        gatewayRouteMapper.update(gatewayRoute);
         stringRedisTemplate.opsForValue().set(GATEWAY_ROUTES, toJson(new GatewayRouteVo(get(gatewayRoute.getId()))));
     }
 
     @Override
-    public GatewayRoute get(long id) {
+    public GatewayRoute get(Integer id) {
         return gatewayRouteMapper.select(id);
     }
 

@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @TableName("roles_resources_relation")
 public class RoleResource extends BasePo {
-    private long roleId;
-    private long resourceId;
+    private Integer roleId;
+    private Integer resourceId;
 }

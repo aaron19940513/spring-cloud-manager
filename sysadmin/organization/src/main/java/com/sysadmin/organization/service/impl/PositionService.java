@@ -21,13 +21,13 @@ public class PositionService implements IPositionService {
     private PositionMapper positionMapper;
 
     @Override
-    public long add(Position position) {
+    public Integer add(Position position) {
         return positionMapper.insert(position);
     }
 
     @Override
     @CacheEvict(value = "position", key = "#root.targetClass.name+'-'+#id")
-    public void delete(long id) {
+    public void delete(Integer id) {
         positionMapper.deleteById(id);
     }
 
@@ -39,7 +39,7 @@ public class PositionService implements IPositionService {
 
     @Override
     @Cacheable(value = "position", key = "#root.targetClass.name+'-'+#id")
-    public Position get(long id) {
+    public Position get(Integer id) {
         return positionMapper.selectById(id);
     }
 

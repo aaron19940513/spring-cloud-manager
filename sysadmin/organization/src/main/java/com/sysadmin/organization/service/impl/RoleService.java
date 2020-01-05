@@ -8,12 +8,11 @@ import com.sysadmin.organization.dao.UserRoleMapper;
 import com.sysadmin.organization.entity.param.RoleQueryParam;
 import com.sysadmin.organization.entity.po.Role;
 import com.sysadmin.organization.entity.po.UserRole;
+import com.sysadmin.organization.service.IRoleResourceService;
 import com.sysadmin.organization.service.IRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,35 +24,37 @@ public class RoleService implements IRoleService {
 
     @Autowired
     private RoleMapper roleMapper;
-
+    @Autowired
+    private IRoleResourceService roleResourceService;
     @Autowired
     private UserRoleMapper userRoleMapper;
 
     @Override
-    public long add(Role role) {
+    public Integer add(Role role) {
         return roleMapper.insert(role);
     }
 
     @Override
-    @CacheEvict(value = "role", key = "#root.targetClass.name+'-'+#id")
-    public void delete(long id) {
+//    @CacheEvict(value = "role", key = "#root.targetClass.name+'-'+#id")
+    public void delete(Integer id) {
         roleMapper.deleteById(id);
     }
 
     @Override
-    @CacheEvict(value = "role", key = "#root.targetClass.name+'-'+#role.id")
+//    @CacheEvict(value = "role", key = "#root.targetClass.name+'-'+#role.id")
     public void update(Role role) {
         roleMapper.updateById(role);
+        roleResourceService.saveBatch(role.getId(), role.getResourceIds());
     }
 
     @Override
-    @Cacheable(value = "role", key = "#root.targetClass.name+'-'+#id")
-    public Role get(long id) {
+//    @Cacheable(value = "role", key = "#root.targetClass.name+'-'+#id")
+    public Role get(Integer id) {
         return roleMapper.selectById(id);
     }
 
     @Override
-    public List<Role> query(long userId) {
+    public List<Role> query(Integer userId) {
         List<UserRole> userRoles = userRoleMapper.selectList(new QueryWrapper<UserRole>().eq("user_id", userId));
         return roleMapper.selectBatchIds(userRoles.stream().map(userRole -> userRole.getRoleId()).collect(Collectors.toList()));
     }

@@ -16,17 +16,17 @@ public interface GatewayRouteMapper {
     @Options(useGeneratedKeys = true)
     @Insert("insert into gateway_routes(route_id,uri,predicates,filters,description,orders,updated_time,created_time,updated_by,created_by)" +
             " values(#{routeId},#{uri},#{predicates},#{filters},#{description},#{orders},now(),now(),#{updatedBy},#{createdBy})")
-    long insert(GatewayRoute gatewayRoute);
+    Integer insert(GatewayRoute gatewayRoute);
 
     @Update("delete from gateway_routes where id=#{id}")
-    void delete(long id);
+    void delete(Integer id);
 
     @Update("update gateway_routes set route_id=#{routeId},uri=#{uri},predicates=#{predicates},filters=#{filters},description=#{description},orders=#{orders},status='Y',updated_by=#{updatedBy},updated_time=now()" +
             " where id=#{id}")
     void update(GatewayRoute gatewayRoute);
 
     @Select("select " + PUBLIC_COLUMN + " from gateway_routes where id=#{id} and status='Y'")
-    GatewayRoute select(long id);
+    GatewayRoute select(Integer id);
 
     @Select("<script>" +
             "select " + PUBLIC_COLUMN +

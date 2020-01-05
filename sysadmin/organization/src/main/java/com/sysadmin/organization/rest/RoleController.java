@@ -3,6 +3,7 @@ package com.sysadmin.organization.rest;
 import com.springboot.cloud.common.core.entity.vo.Result;
 import com.sysadmin.organization.entity.form.RoleForm;
 import com.sysadmin.organization.entity.form.RoleQueryForm;
+import com.sysadmin.organization.entity.form.RoleUpdateForm;
 import com.sysadmin.organization.entity.param.RoleQueryParam;
 import com.sysadmin.organization.entity.po.Role;
 import com.sysadmin.organization.service.IRoleService;
@@ -32,41 +33,41 @@ public class RoleController {
     }
 
     @ApiOperation(value = "删除角色", notes = "根据url的id来指定删除对象")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "角色ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "角色ID", required = true, dataType = "Integer")
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable long id) {
+    public Result delete(@PathVariable Integer id) {
         roleService.delete(id);
         return Result.success();
     }
 
     @ApiOperation(value = "修改角色", notes = "修改指定角色信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "角色ID", required = true, dataType = "long"),
+            @ApiImplicitParam(name = "id", value = "角色ID", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "roleForm", value = "角色实体", required = true, dataType = "RoleForm")
     })
     @PutMapping(value = "/{id}")
-    public Result update(@PathVariable long id, @Valid @RequestBody RoleForm roleForm) {
-        Role role = roleForm.toPo(Role.class);
+    public Result update(@PathVariable Integer id, @Valid @RequestBody RoleUpdateForm roleUpdateForm) {
+        Role role = roleUpdateForm.toPo(Role.class);
         role.setId(id);
         roleService.update(role);
         return Result.success();
     }
 
     @ApiOperation(value = "获取角色", notes = "获取指定角色信息")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "角色ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "角色ID", required = true, dataType = "Integer")
     @GetMapping(value = "/{id}")
-    public Result get(@PathVariable long id) {
+    public Result get(@PathVariable Integer id) {
         log.debug("get with id:{}", id);
         return Result.success(roleService.get(id));
     }
 
     @ApiOperation(value = "查询角色", notes = "根据用户id查询用户所拥有的角色信息")
-    @ApiImplicitParam(paramType = "path", name = "userId", value = "用户id", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "userId", value = "用户id", required = true, dataType = "Integer")
     @ApiResponses(
             @ApiResponse(code = 200, message = "处理成功", response = Result.class)
     )
     @GetMapping(value = "/user/{userId}")
-    public Result query(@PathVariable long userId) {
+    public Result query(@PathVariable Integer userId) {
         log.debug("query with userId:{}", userId);
         return Result.success(roleService.query(userId));
     }

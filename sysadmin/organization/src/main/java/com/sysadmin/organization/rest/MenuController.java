@@ -32,20 +32,20 @@ public class MenuController {
     }
 
     @ApiOperation(value = "删除菜单", notes = "根据url的id来指定删除对象")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "菜单ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "菜单ID", required = true, dataType = "Integer")
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable long id) {
+    public Result delete(@PathVariable Integer id) {
         menuService.delete(id);
         return Result.success();
     }
 
     @ApiOperation(value = "修改菜单", notes = "修改指定菜单信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "菜单ID", required = true, dataType = "long"),
+            @ApiImplicitParam(name = "id", value = "菜单ID", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "menuForm", value = "菜单实体", required = true, dataType = "MenuForm")
     })
     @PutMapping(value = "/{id}")
-    public Result update(@PathVariable long id, @Valid @RequestBody MenuForm menuForm) {
+    public Result update(@PathVariable Integer id, @Valid @RequestBody MenuForm menuForm) {
         Menu menu = menuForm.toPo(Menu.class);
         menu.setId(id);
         menuService.update(menu);
@@ -53,9 +53,9 @@ public class MenuController {
     }
 
     @ApiOperation(value = "获取菜单", notes = "获取指定菜单信息")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "菜单ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "菜单ID", required = true, dataType = "Integer")
     @GetMapping(value = "/{id}")
-    public Result get(@PathVariable long id) {
+    public Result get(@PathVariable Integer id) {
         log.debug("get with id:{}", id);
         return Result.success(menuService.get(id));
     }
@@ -85,9 +85,9 @@ public class MenuController {
     }
 
     @ApiOperation(value = "根据父id查询菜单", notes = "根据父id查询菜单列表")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "菜单父ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "菜单父ID", required = true, dataType = "Integer")
     @GetMapping(value = "/parent/{id}")
-    public Result search(@PathVariable long id) {
+    public Result search(@PathVariable Integer id) {
         log.debug("query with parent id:{}", id);
         return Result.success(menuService.queryByParentId(id));
     }

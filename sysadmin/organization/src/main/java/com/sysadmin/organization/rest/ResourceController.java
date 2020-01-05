@@ -31,20 +31,20 @@ public class ResourceController {
     }
 
     @ApiOperation(value = "删除资源", notes = "根据url的id来指定删除对象")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "资源ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "资源ID", required = true, dataType = "Integer")
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable long id) {
+    public Result delete(@PathVariable Integer id) {
         resourceService.delete(id);
         return Result.success();
     }
 
     @ApiOperation(value = "修改资源", notes = "修改指定资源信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "资源ID", required = true, dataType = "long"),
+            @ApiImplicitParam(name = "id", value = "资源ID", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "resourceForm", value = "资源实体", required = true, dataType = "ResourceForm")
     })
     @PutMapping(value = "/{id}")
-    public Result update(@PathVariable long id, @Valid @RequestBody ResourceForm resourceForm) {
+    public Result update(@PathVariable Integer id, @Valid @RequestBody ResourceForm resourceForm) {
         Resource resource = resourceForm.toPo(Resource.class);
         resource.setId(id);
         resourceService.update(resource);
@@ -52,15 +52,15 @@ public class ResourceController {
     }
 
     @ApiOperation(value = "获取资源", notes = "获取指定资源信息")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "资源ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "资源ID", required = true, dataType = "Integer")
     @GetMapping(value = "/{id}")
-    public Result get(@PathVariable long id) {
+    public Result get(@PathVariable Integer id) {
         log.debug("get with id:{}", id);
         return Result.success(resourceService.get(id));
     }
 
     @ApiOperation(value = "查询资源", notes = "根据userId查询用户所拥有的资源信息")
-    @ApiImplicitParam(paramType = "path", name = "userId", value = "用户id", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "userId", value = "用户id", required = true, dataType = "Integer")
     @ApiResponses(
             @ApiResponse(code = 200, message = "处理成功", response = Result.class)
     )

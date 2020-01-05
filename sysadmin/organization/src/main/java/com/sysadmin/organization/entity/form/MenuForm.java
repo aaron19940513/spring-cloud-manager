@@ -14,7 +14,7 @@ public class MenuForm extends BaseForm<Menu> {
 
     @NotBlank(message = "菜单父id不能为空")
     @ApiModelProperty(value = "菜单父id")
-    private String parentId;
+    private Integer parentId;
 
     @NotBlank(message = "菜单名称不能为空")
     @ApiModelProperty(value = "菜单名称")

@@ -21,13 +21,13 @@ public class GroupService implements IGroupService {
     private GroupMapper groupMapper;
 
     @Override
-    public long add(Group group) {
+    public Integer add(Group group) {
         return groupMapper.insert(group);
     }
 
     @Override
     @CacheEvict(value = "group", key = "#root.targetClass.name+'-'+#id")
-    public void delete(long id) {
+    public void delete(Integer id) {
         groupMapper.deleteById(id);
     }
 
@@ -39,7 +39,7 @@ public class GroupService implements IGroupService {
 
     @Override
     @Cacheable(value = "group", key = "#root.targetClass.name+'-'+#id")
-    public Group get(long id) {
+    public Group get(Integer id) {
         return groupMapper.selectById(id);
     }
 
@@ -53,7 +53,7 @@ public class GroupService implements IGroupService {
     }
 
     @Override
-    public List<Group> queryByParentId(long id) {
+    public List<Group> queryByParentId(Integer id) {
         return groupMapper.selectList(new QueryWrapper<Group>().eq("parent_id", id));
     }
 }

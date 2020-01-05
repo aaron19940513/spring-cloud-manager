@@ -12,7 +12,7 @@ public interface IMenuService {
      * @param id
      * @return
      */
-    Menu get(long id);
+    Menu get(Integer id);
 
     /**
      * 新增菜单
@@ -20,7 +20,7 @@ public interface IMenuService {
      * @param menu
      * @return
      */
-    long add(Menu menu);
+    Integer add(Menu menu);
 
     /**
      * 查询菜单
@@ -34,7 +34,7 @@ public interface IMenuService {
      *
      * @return
      */
-    List<Menu> queryByParentId(long id);
+    List<Menu> queryByParentId(Integer id);
 
     /**
      * 更新菜单信息
@@ -48,5 +48,5 @@ public interface IMenuService {
      *
      * @param id
      */
-    void delete(long id);
+    void delete(Integer id);
 }

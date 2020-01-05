@@ -32,14 +32,14 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public long add(User user) {
+    public Integer add(User user) {
         user.setPassword(passwordEncoder().encode(user.getPassword()));
         return userMapper.insert(user);
     }
 
     @Override
     @CacheEvict(value = "user", key = "#root.targetClass.name+'-'+#id")
-    public void delete(long id) {
+    public void delete(Integer id) {
         userMapper.deleteById(id);
     }
 
@@ -51,7 +51,7 @@ public class UserService implements IUserService {
 
     @Override
     @Cacheable(value = "user", key = "#root.targetClass.name+'-'+#id")
-    public User get(long id) {
+    public User get(Integer id) {
         return userMapper.selectById(id);
     }
 

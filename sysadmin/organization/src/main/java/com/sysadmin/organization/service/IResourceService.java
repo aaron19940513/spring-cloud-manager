@@ -12,7 +12,7 @@ public interface IResourceService {
      * @param id
      * @return
      */
-    Resource get(long id);
+    Resource get(Integer id);
 
     /**
      * 新增资源
@@ -20,7 +20,7 @@ public interface IResourceService {
      * @param resource
      * @return
      */
-    long add(Resource resource);
+    Integer add(Resource resource);
 
     /**
      * 查询资源
@@ -48,5 +48,5 @@ public interface IResourceService {
      *
      * @param id
      */
-    void delete(long id);
+    void delete(Integer id);
 }

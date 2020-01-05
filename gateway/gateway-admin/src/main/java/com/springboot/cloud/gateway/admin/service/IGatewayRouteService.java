@@ -12,7 +12,7 @@ public interface IGatewayRouteService {
      * @param id
      * @return
      */
-    GatewayRoute get(long id);
+    GatewayRoute get(Integer id);
 
     /**
      * 新增网关路由
@@ -20,7 +20,7 @@ public interface IGatewayRouteService {
      * @param gatewayRoute
      * @return
      */
-    long add(GatewayRoute gatewayRoute);
+    Integer add(GatewayRoute gatewayRoute);
 
     /**
      * 查询网关路由
@@ -41,10 +41,11 @@ public interface IGatewayRouteService {
      *
      * @param id
      */
-    void delete(long id);
+    void delete(Integer id);
 
     /**
      * 重新加载网关路由配置到redis
+     *
      * @return 成功返回true
      */
     boolean overload();

@@ -32,18 +32,18 @@ public class UserController {
     }
 
     @ApiOperation(value = "删除用户", notes = "根据url的id来指定删除对象，逻辑删除")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "用户ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "用户ID", required = true, dataType = "Integer")
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable long id) {
+    public Result delete(@PathVariable Integer id) {
         userService.delete(id);
         return Result.success();
     }
 
     @ApiOperation(value = "修改用户", notes = "修改指定用户信息")
-    @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "long"),
+    @ApiImplicitParams({@ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "userForm", value = "用户实体", required = true, dataType = "UserForm")})
     @PutMapping(value = "/{id}")
-    public Result update(@PathVariable long id, @Valid @RequestBody UserForm userForm) {
+    public Result update(@PathVariable Integer id, @Valid @RequestBody UserForm userForm) {
         User user = userForm.toPo(User.class);
         user.setId(id);
         userService.update(user);
@@ -51,9 +51,9 @@ public class UserController {
     }
 
     @ApiOperation(value = "获取用户", notes = "获取指定用户信息")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "用户ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "用户ID", required = true, dataType = "Integer")
     @GetMapping(value = "/{id}")
-    public Result get(@PathVariable long id) {
+    public Result get(@PathVariable Integer id) {
         log.debug("get with id:{}", id);
         return Result.success(userService.get(id));
     }

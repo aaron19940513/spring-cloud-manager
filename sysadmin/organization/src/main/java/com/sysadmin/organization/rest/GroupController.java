@@ -32,20 +32,20 @@ public class GroupController {
     }
 
     @ApiOperation(value = "删除用户组", notes = "根据url的id来指定删除对象")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "用户组ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "用户组ID", required = true, dataType = "Integer")
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable long id) {
+    public Result delete(@PathVariable Integer id) {
         groupService.delete(id);
         return Result.success();
     }
 
     @ApiOperation(value = "修改用户组", notes = "修改指定用户组信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "用户组ID", required = true, dataType = "long"),
+            @ApiImplicitParam(name = "id", value = "用户组ID", required = true, dataType = "Integer"),
             @ApiImplicitParam(name = "groupForm", value = "用户组实体", required = true, dataType = "GroupForm")
     })
     @PutMapping(value = "/{id}")
-    public Result update(@PathVariable long id, @Valid @RequestBody GroupForm groupForm) {
+    public Result update(@PathVariable Integer id, @Valid @RequestBody GroupForm groupForm) {
         Group group = groupForm.toPo(Group.class);
         group.setId(id);
         groupService.update(group);
@@ -53,9 +53,9 @@ public class GroupController {
     }
 
     @ApiOperation(value = "获取用户组", notes = "获取指定用户组信息")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "用户组ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "用户组ID", required = true, dataType = "Integer")
     @GetMapping(value = "/{id}")
-    public Result get(@PathVariable long id) {
+    public Result get(@PathVariable Integer id) {
         log.debug("get with id:{}", id);
         return Result.success(groupService.get(id));
     }
@@ -85,9 +85,9 @@ public class GroupController {
     }
 
     @ApiOperation(value = "根据父id查询用户组", notes = "根据父id查询用户组列表")
-    @ApiImplicitParam(paramType = "path", name = "id", value = "用户组父ID", required = true, dataType = "long")
+    @ApiImplicitParam(paramType = "path", name = "id", value = "用户组父ID", required = true, dataType = "Integer")
     @GetMapping(value = "/parent/{id}")
-    public Result search(@PathVariable long id) {
+    public Result search(@PathVariable Integer id) {
         log.debug("query with parent id:{}", id);
         return Result.success(groupService.queryByParentId(id));
     }

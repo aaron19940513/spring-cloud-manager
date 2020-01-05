@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-/**
- * Created by zhoutaoo on 2018/5/25.
- */
+
 @Component
 class LoadResourceDefine {
 

@@ -16,6 +16,7 @@ public class GatewayRouteQueryParam extends BaseParam {
     public GatewayRouteQueryParam(String uri) {
         this.uri = uri;
     }
+
     private String uri;
     private Date createdTimeStart;
     private Date createdTimeEnd;

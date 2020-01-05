@@ -21,13 +21,13 @@ public class MenuService implements IMenuService {
     private MenuMapper menuMapper;
 
     @Override
-    public long add(Menu menu) {
+    public Integer add(Menu menu) {
         return menuMapper.insert(menu);
     }
 
     @Override
     @CacheEvict(value = "menu", key = "#root.targetClass.name+'-'+#id")
-    public void delete(long id) {
+    public void delete(Integer id) {
         menuMapper.deleteById(id);
     }
 
@@ -39,7 +39,7 @@ public class MenuService implements IMenuService {
 
     @Override
     @Cacheable(value = "menu", key = "#root.targetClass.name+'-'+#id")
-    public Menu get(long id) {
+    public Menu get(Integer id) {
         return menuMapper.selectById(id);
     }
 
@@ -51,7 +51,7 @@ public class MenuService implements IMenuService {
     }
 
     @Override
-    public List<Menu> queryByParentId(long id) {
+    public List<Menu> queryByParentId(Integer id) {
         return menuMapper.selectList(new QueryWrapper<Menu>().eq("parent_id", id));
     }
 }

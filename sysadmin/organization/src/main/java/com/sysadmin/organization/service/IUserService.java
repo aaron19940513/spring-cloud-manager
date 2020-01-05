@@ -12,7 +12,7 @@ public interface IUserService {
      * @param id
      * @return
      */
-    User get(long id);
+    User get(Integer id);
 
     /**
      * 根据用户唯一标识获取用户信息
@@ -29,7 +29,7 @@ public interface IUserService {
      * @param user
      * @return
      */
-    long add(User user);
+    Integer add(User user);
 
     /**
      * 查询用户
@@ -50,5 +50,5 @@ public interface IUserService {
      *
      * @param id
      */
-    void delete(long id);
+    void delete(Integer id);
 }

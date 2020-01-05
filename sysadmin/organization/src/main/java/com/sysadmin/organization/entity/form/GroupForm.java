@@ -14,7 +14,7 @@ public class GroupForm extends BaseForm<Group> {
 
     @NotBlank(message = "用户组父id不能为空")
     @ApiModelProperty(value = "用户组父id")
-    private String parentId;
+    private Integer parentId;
 
     @NotBlank(message = "用户组名称不能为空")
     @ApiModelProperty(value = "用户组名称")

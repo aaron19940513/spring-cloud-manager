@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @TableName("users_roles_relation")
 public class UserRole extends BasePo {
-    private long userId;
-    private long roleId;
+    private Integer userId;
+    private Integer roleId;
 }
