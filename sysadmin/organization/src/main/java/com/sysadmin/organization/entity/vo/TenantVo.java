@@ -12,11 +12,9 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserVo extends BaseVo {
+public class TenantVo extends BaseVo {
     private Integer id = 0;
-    private String name;
-    private String mobile;
-    private String username;
+    private String tenantName;
     private String description;
     private String deleted;
     private String createdBy;
