@@ -14,6 +14,7 @@ public class UserContextHolder {
 
     private UserContextHolder() {
         this.threadLocal = new ThreadLocal<>();
+
     }
 
     /**
@@ -50,6 +51,7 @@ public class UserContextHolder {
     public Map<String, String> getContext() {
         return threadLocal.get();
     }
+
 
     /**
      * 获取上下文中的用户名

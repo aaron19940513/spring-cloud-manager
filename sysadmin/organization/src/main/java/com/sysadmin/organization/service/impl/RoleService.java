@@ -13,6 +13,8 @@ import com.sysadmin.organization.service.IRoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,20 +37,25 @@ public class RoleService implements IRoleService {
     }
 
     @Override
-//    @CacheEvict(value = "role", key = "#root.targetClass.name+'-'+#id")
+    @CacheEvict(value = "role", key = "#root.targetClass.name+'-'+#id")
     public void delete(Integer id) {
         roleMapper.deleteById(id);
     }
 
     @Override
-//    @CacheEvict(value = "role", key = "#root.targetClass.name+'-'+#role.id")
+    public List<Role> getAll() {
+        return roleMapper.selectList(new QueryWrapper<>());
+    }
+
+    @Override
+    @CacheEvict(value = "role", key = "#root.targetClass.name+'-'+#role.id")
     public void update(Role role) {
         roleMapper.updateById(role);
         roleResourceService.saveBatch(role.getId(), role.getResourceIds());
     }
 
     @Override
-//    @Cacheable(value = "role", key = "#root.targetClass.name+'-'+#id")
+    @Cacheable(value = "role", key = "#root.targetClass.name+'-'+#id")
     public Role get(Integer id) {
         return roleMapper.selectById(id);
     }

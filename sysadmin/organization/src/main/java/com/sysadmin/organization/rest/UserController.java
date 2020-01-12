@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 
 @RestController
@@ -74,5 +75,12 @@ public class UserController {
     public Result search(@Valid @RequestBody UserQueryForm userQueryForm) {
         log.debug("search with userQueryForm:{}", userQueryForm);
         return Result.success(userService.query(userQueryForm.getPage(), userQueryForm.toParam(UserQueryParam.class)));
+    }
+
+    @ApiOperation(value = "加载用户", notes = "加载所有用户信息到redis")
+    @PostConstruct
+    @GetMapping(value = "load")
+    public Result loadUsers() {
+        return Result.success(userService.loadUsers());
     }
 }

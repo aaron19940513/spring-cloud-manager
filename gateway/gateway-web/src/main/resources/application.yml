@@ -57,3 +57,6 @@ logging:
   path: logs/
   file:
     max-size: 1GB
+ribbon:
+  ReadTimeout: 600000
+  ConnectTimeout: 600000

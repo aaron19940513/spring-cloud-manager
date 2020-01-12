@@ -42,3 +42,6 @@ management:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+ribbon:
+  ReadTimeout: 600000
+  ConnectTimeout: 600000

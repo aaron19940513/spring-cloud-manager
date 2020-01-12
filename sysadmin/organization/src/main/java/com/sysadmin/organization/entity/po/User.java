@@ -1,5 +1,6 @@
 package com.sysadmin.organization.entity.po;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.springboot.cloud.common.core.entity.po.BasePo;
@@ -8,12 +9,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("users")
-public class User extends BasePo {
+public class    User extends BasePo {
     private String name;
     private String mobile;
     private String username;
@@ -25,4 +28,6 @@ public class User extends BasePo {
     private Boolean accountNonLocked;
     @TableLogic
     private String deleted = "N";
+    @TableField(exist = false)
+    private Set<Integer> roleIds;
 }

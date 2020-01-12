@@ -16,6 +16,7 @@ import java.util.Map;
  */
 @Slf4j
 public class UserInterceptor implements HandlerInterceptor {
+
     /**
      * 服务间调用token用户信息,格式为json
      * {

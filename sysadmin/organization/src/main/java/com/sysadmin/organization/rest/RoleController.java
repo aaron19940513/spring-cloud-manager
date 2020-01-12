@@ -72,6 +72,12 @@ public class RoleController {
         return Result.success(roleService.query(userId));
     }
 
+    @ApiOperation(value = "获取所有角色", notes = "获取所有角色")
+    @GetMapping(value = "/all")
+    public Result get() {
+        return Result.success(roleService.getAll());
+    }
+
     @ApiOperation(value = "搜索角色", notes = "根据条件搜索角色信息")
     @ApiImplicitParam(name = "roleQueryForm", value = "角色查询参数", required = true, dataType = "RoleQueryForm")
     @ApiResponses(

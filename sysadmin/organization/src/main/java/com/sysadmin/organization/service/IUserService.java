@@ -51,4 +51,10 @@ public interface IUserService {
      * @param id
      */
     void delete(Integer id);
+
+    /**
+     * 加载用户
+     *
+     */
+    boolean loadUsers();
 }

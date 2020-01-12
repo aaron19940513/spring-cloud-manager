@@ -51,4 +51,11 @@ public interface IRoleService {
      * @param id
      */
     void delete(Integer id);
+
+    /**
+     * 获取所有角色
+     *
+     * @return
+     */
+    List<Role> getAll();
 }

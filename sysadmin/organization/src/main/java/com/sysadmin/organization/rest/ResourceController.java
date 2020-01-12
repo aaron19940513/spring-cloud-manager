@@ -77,6 +77,7 @@ public class ResourceController {
     @GetMapping(value = "/all")
     public Result queryAll() {
         return Result.success(resourceService.query(new ResourceQueryParam()));
+
     }
 
     @ApiOperation(value = "查询资源", notes = "根据条件查询资源信息，简单查询")
