@@ -1,12 +1,15 @@
 package com.springboot.cloud.common.web.entity.form;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.springboot.cloud.common.core.entity.param.BaseParam;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 
+@EqualsAndHashCode(callSuper = true)
 @ApiModel
 @Slf4j
 @Data
@@ -42,6 +45,7 @@ public class BaseQueryForm<P extends BaseParam> extends BaseForm {
      *
      * @return
      */
+    @JsonIgnore
     public Page getPage() {
         return new Page(this.getCurrent(), this.getSize());
     }

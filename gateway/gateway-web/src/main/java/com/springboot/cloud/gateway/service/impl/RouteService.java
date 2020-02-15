@@ -1,6 +1,12 @@
 package com.springboot.cloud.gateway.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
 import com.springboot.cloud.gateway.service.IRouteService;
 import lombok.extern.slf4j.Slf4j;
@@ -11,9 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.io.IOException;
-import java.util.*;
 
 @Service
 @Slf4j
@@ -35,12 +38,13 @@ public class RouteService implements IRouteService {
 
         List<String> gatewayRoutes = Optional.ofNullable(stringRedisTemplate.opsForValue().multiGet(gatewayKeys)).orElse(Lists.newArrayList());
         gatewayRoutes.forEach(value -> {
-            try {
-                RouteDefinition routeDefinition = new ObjectMapper().readValue(value, RouteDefinition.class);
+            try{
+                RouteDefinition routeDefinition = JSON.parseObject(value, RouteDefinition.class);
                 routeDefinitionMaps.put(routeDefinition.getId(), routeDefinition);
-            } catch (IOException e) {
-                log.error(e.getMessage());
+            }catch (Exception e){
+                e.printStackTrace();
             }
+
         });
     }
 

@@ -1,11 +1,15 @@
 package com.springboot.cloud.gateway.admin.service.impl;
 
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springboot.cloud.gateway.admin.dao.GatewayRouteMapper;
-import com.springboot.cloud.gateway.admin.entity.vo.GatewayRouteVo;
 import com.springboot.cloud.gateway.admin.entity.param.GatewayRouteQueryParam;
 import com.springboot.cloud.gateway.admin.entity.po.GatewayRoute;
+import com.springboot.cloud.gateway.admin.entity.vo.GatewayRouteVo;
 import com.springboot.cloud.gateway.admin.service.IGatewayRouteService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
@@ -13,8 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @Slf4j
@@ -58,6 +60,7 @@ public class GatewayRouteService implements IGatewayRouteService {
     }
 
     @Override
+    @PostConstruct
     public boolean overload() {
         List<GatewayRoute> gatewayRoutes = gatewayRouteMapper.query(new GatewayRouteQueryParam());
         ValueOperations<String, String> opsForValue = stringRedisTemplate.opsForValue();

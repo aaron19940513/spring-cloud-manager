@@ -3,8 +3,8 @@ INSERT INTO users (id, username, password, deleted, enabled, account_non_expired
 VALUES
   (101, 'admin', '$2a$10$vYA9wKn/hVGOtwQw2eHiceeIGNBdfLYpDmbzHgBSVmOfHXPH4iYdS', 'N', true, true, true, true,
         '超级管理员', '', now(), now(), 'system', 'system'),
-  (102, 'zhoutaoo', '$2a$10$vYA9wKn/hVGOtwQw2eHiceeIGNBdfLYpDmbzHgBSVmOfHXPH4iYdS', 'N', true, true, true, true,
-        '周涛', 15619841000, now(), now(), 'system', 'system');
+  (102, 'samg', '$2a$10$vYA9wKn/hVGOtwQw2eHiceeIGNBdfLYpDmbzHgBSVmOfHXPH4iYdS', 'N', true, true, true, true,
+        '高健超', 15619841000, now(), now(), 'system', 'system');
 -- 角色
 INSERT INTO roles (id, code, name, description, created_time, updated_time, created_by, updated_by)
 VALUES (101, 'ADMIN', '超级管理员', '公司IT总负责人', now(), now(), 'system', 'system'),

@@ -1,0 +1,16 @@
+server:
+  port: ${SERVER_PORT:8084}
+spring:
+  application:
+    name: organization
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
+#      config:
+#        server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
+#        file-extension: yml
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

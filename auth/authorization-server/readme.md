@@ -76,7 +76,6 @@ Authorization: Basic dGVzdF9jbGllbnQ6dGVzdF9zZWNyZXQ=
 Cache-Control: no-cache
 Content-Type: application/x-www-form-urlencoded
 
-username=zhoutaoo&password=password
 ```
 响应报文
 
@@ -87,7 +86,7 @@ username=zhoutaoo&password=password
   "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJ6aG91dGFvbyIsInNjb3BlIjpbInJlYWQiXSwib3JnYW5pemF0aW9uIjoiemhvdXRhb28iLCJhdGkiOiI1MWI4NjhkMS0wY2UxLTRmYjgtOTAxZC05YzdiZmZjMGFkYmIiLCJleHAiOjE1MzQ1MjI2MTgsImF1dGhvcml0aWVzIjpbIkFETUlOIiwiSVQiXSwianRpIjoiMGU2N2Q5MDEtOThlMC00ZTk3LTkwNzgtODllMTBmZTRjOGI2IiwiY2xpZW50X2lkIjoidGVzdF9jbGllbnQifQ.zNtWWG8xxPsjTZKghOjyGNDjnhHqnPvikfqN1uynh3U",
   "expires_in": 43199,
   "scope": "read",
-  "organization": "zhoutaoo",
+  "organization": "samg",
   "jti": "51b868d1-0ce1-4fb8-901d-9c7bffc0adbb"
 }
 ```

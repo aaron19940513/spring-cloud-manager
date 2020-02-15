@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springcloud.manager.sysadmin.organization.dao.TenantUserRelationMapper">
+
+    <resultMap id="BaseResultMap" type="TenantUserRelationVo">
+        <result column="tenant_id" jdbcType="NUMERIC" property="tenantId"/>
+        <result column="tenant_name" jdbcType="VARCHAR" property="tenantName"/>
+        <result column="user_id" jdbcType="NUMERIC" property="userId"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+    </resultMap>
+
+    <select id="selectRelationVo" resultMap="BaseResultMap">
+        SELECT tenant.id as tenant_id, tenant.tenant_name as tenant_name, users.id as user_id,
+        users.username as user_name,  users.description as description from
+        tenant_user_relation relation
+        inner join tenant on relation.tenant_id = tenant.id
+        inner join users on relation.user_id = users.id
+
+        <where>
+            <if test="relation.tenantId != null and relation.tenantId != '' ">
+                AND relation.tenant_id = #{relation.tenantId}
+            </if>
+        </where>
+    </select>
+
+</mapper>

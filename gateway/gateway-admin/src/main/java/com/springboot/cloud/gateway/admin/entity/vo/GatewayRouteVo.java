@@ -1,5 +1,9 @@
 package com.springboot.cloud.gateway.admin.entity.vo;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springboot.cloud.common.core.entity.vo.BaseVo;
@@ -9,10 +13,6 @@ import com.springboot.cloud.gateway.admin.entity.po.PredicateDefinition;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
@@ -28,6 +28,10 @@ public class GatewayRouteVo extends BaseVo {
         this.id = gatewayRoute.getId();
         this.uri = gatewayRoute.getUri();
         this.order = gatewayRoute.getOrders();
+        setCreatedTime(gatewayRoute.getCreatedTime());
+        setUpdatedTime(gatewayRoute.getUpdatedTime());
+        setCreatedBy(gatewayRoute.getCreatedBy());
+        setUpdatedBy(gatewayRoute.getUpdatedBy());
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             this.filters = objectMapper.readValue(gatewayRoute.getFilters(), new TypeReference<List<FilterDefinition>>() {

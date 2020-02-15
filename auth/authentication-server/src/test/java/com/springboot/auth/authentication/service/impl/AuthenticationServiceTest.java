@@ -1,16 +1,14 @@
 package com.springboot.auth.authentication.service.impl;
 
+import java.util.Set;
+
 import com.google.common.collect.Sets;
 import com.springboot.auth.authentication.po.Resource;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.security.access.SecurityConfig;
 
-import java.util.Set;
 
-/**
- * Created by zhoutaoo on 2018/5/26.
- */
 public class AuthenticationServiceTest {
 
     @Test

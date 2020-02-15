@@ -1,11 +1,15 @@
 package com.springboot.cloud.gateway.admin.entity.po;
 
-import com.springboot.cloud.common.core.entity.po.BasePo;
-import com.sun.jndi.toolkit.url.Uri;
-import lombok.*;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import com.springboot.cloud.common.core.entity.po.BasePo;
+import com.sun.jndi.toolkit.url.Uri;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
