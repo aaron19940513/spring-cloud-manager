@@ -29,8 +29,6 @@ public class FeignOkHttpConfig {
             .readTimeout(feignOkHttpReadTimeout, TimeUnit.SECONDS)
             .connectTimeout(feignConnectTimeout, TimeUnit.SECONDS)
             .writeTimeout(feignWriteTimeout, TimeUnit.SECONDS)
-            //				.connectionPool(new ConnectionPool(int maxIdleConnections, long keepAliveDuration, TimeUnit timeUnit))   //自定义链接池
-            //				.addInterceptor(XXXXXXXInterceptor) 	//自定义拦截器
             .build();
     }
 }

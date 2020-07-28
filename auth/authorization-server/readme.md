@@ -9,13 +9,11 @@
 
 ### 先决条件
 
-- [postgresql](http://www.postgresql.org/)
-- [rabbitmq](http://rabbitmq.io/download)
 - [eureka](../../center/eureka)
 
 ### 启动命令
 
-部署脚本：启动数据库，部署`auth/db`下的ddl和dml脚本
+部署脚本：启动数据库，部署`db`下的ddl和dml脚本
 
 启动应用：`mvn spring-boot:run`
 
@@ -63,9 +61,9 @@ password: `password`
 
 用途：可用于用户通过前端应用登陆、使用应用，如app，web等终端
 
-![postman](../../docs/auth/oauth2_password_token_auth.png)
 
-![postman](../../docs/auth/oauth2_password_token.png)
+
+
 
 请求报文
 
@@ -95,7 +93,6 @@ Content-Type: application/x-www-form-urlencoded
 
 用途：可用于接口开放给第三方商户，商户申请client_id和密码，即可调用授权的接口
 
-![postman](../../docs/auth/oauth2_client_token.png)
 
 请求报文
 
@@ -137,20 +134,20 @@ redirect_uri： 该参数要与商户申请client_id时登记的url(oauth_client
 
 2. 用户进入登陆页面，输入用户名和密码登陆
 
-![postman](../../docs/auth/oauth2_authorization_code_login.png)
+
 
 3. 用户点击 "授权"或"拒绝"
 
-![postman](../../docs/auth/oauth2_authorization_code_authorization.png)
+
 
 4. 用户同意授权后，浏览器自动重定向至redirect_uri并带上code和state参数
 
-![postman](../../docs/auth/oauth2_authorization_code_url.png)
+
 
 
 **第二步：根据url上带的code获取用户的access_token**
 
-![postman](../../docs/auth/oauth2_authorization_code.png)
+
 
 请求报文
 
@@ -177,7 +174,7 @@ Cache-Control: no-cache
 
 用途：使用refresh_token更新access_token
 
-![postman](../../docs/auth/oauth2_refresh_token.png)
+
 
 请求报文
 
@@ -206,7 +203,7 @@ Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0g
 
 用途：可用于用户通过手机和验证码在前端应用登陆、使用应用
 
-![postman](../../docs/auth/oauth2_mobile_token.png)
+
 
 请求报文
 

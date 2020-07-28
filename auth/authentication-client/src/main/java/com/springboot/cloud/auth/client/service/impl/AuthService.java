@@ -1,16 +1,22 @@
 package com.springboot.cloud.auth.client.service.impl;
 
+import java.util.stream.Stream;
+
 import com.springboot.cloud.auth.client.provider.AuthProvider;
 import com.springboot.cloud.auth.client.service.IAuthService;
 import com.springboot.cloud.common.core.entity.vo.Result;
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.stream.Stream;
 
 @Service
 @Slf4j
@@ -74,8 +80,8 @@ public class AuthService implements IAuthService {
             jwtToken = StringUtils.substring(jwtToken, BEARER.length());
         }
         return Jwts.parser()  //得到DefaultJwtParser
-                .setSigningKey(signingKey.getBytes()) //设置签名的秘钥
-                .parseClaimsJws(jwtToken);
+                   .setSigningKey(signingKey.getBytes()) //设置签名的秘钥
+                   .parseClaimsJws(jwtToken);
     }
 
     @Override

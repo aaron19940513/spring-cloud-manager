@@ -11,8 +11,6 @@ import java.util.Map;
 
 /**
  * RestTemplate传递用户上下文
- *
- * @author zhudeming
  */
 public class RestTemplateUserContextInterceptor implements ClientHttpRequestInterceptor {
 
