@@ -1,6 +1,6 @@
 package com.springboot.cloud.gateway.service.impl;
 
-import com.springboot.cloud.auth.client.service.IAuthService;
+import com.springcloud.manager.auth.client.service.IAuthService;
 import com.springboot.cloud.gateway.service.IPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
