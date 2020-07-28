@@ -1,4 +1,4 @@
-package com.springcloud.book.eureka.server.controller;
+package com.springcloud.manager.eureka.server.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EurekaClientConfigBean;

@@ -1,4 +1,4 @@
-package com.springcloud.book.eureka.server;
+package com.springcloud.manager.eureka.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration;
