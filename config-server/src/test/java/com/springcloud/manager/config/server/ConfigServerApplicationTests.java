@@ -1,4 +1,4 @@
-package com.springcloud.book.config.server;
+package com.springcloud.manager.config.server;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
