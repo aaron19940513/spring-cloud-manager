@@ -19,7 +19,7 @@ spring:
     port: ${REDIS_PORT:6379}
     #password: ${REDIS_PASSWORD:}
   datasource:
-    url: jdbc:${DATASOURCE_DB:mysql}://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:3306}/sc_gateway?characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+    url: jdbc:${DATASOURCE_DB:mysql}://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:3306}/sc_gateway?characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
     username: ${DATASOURCE_USERNAME:root}
     password: ${DATASOURCE_PASSWORD:1234}
     driver-class-name: ${DATASOURCE_DRIVER:com.mysql.jdbc.Driver}
