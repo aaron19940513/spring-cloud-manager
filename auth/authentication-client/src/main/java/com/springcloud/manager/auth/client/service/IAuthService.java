@@ -16,6 +16,12 @@ public interface IAuthService {
     Result authenticate(String authentication, String url, String method);
 
     /**
+     * 是否开启签权
+     * @return
+     */
+    boolean enableAuthentication();
+
+    /**
      * 判断url是否在忽略的范围内
      * 只要是配置中的开头，即返回true
      *

@@ -17,7 +17,6 @@ public class ConsumerController {
     @GetMapping("/consumer/feign")
     public String findByIdByEurekaServer() {
         return userFeignService.helloFeign();
-
     }
 
 }

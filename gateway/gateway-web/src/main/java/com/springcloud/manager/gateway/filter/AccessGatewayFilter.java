@@ -53,8 +53,8 @@ public class AccessGatewayFilter implements GlobalFilter {
         String method = request.getMethodValue();
         String url = request.getPath().value();
         log.debug("url:{},method:{},headers:{}", url, method, request.getHeaders());
-        //不需要网关签权的url
-        if (authService.ignoreAuthentication(url)) {
+        //跳过签权服务或者不需要网关签权的url
+        if (!authService.enableAuthentication() || authService.ignoreAuthentication(url)) {
             return chain.filter(exchange);
         }
 
@@ -95,7 +95,7 @@ public class AccessGatewayFilter implements GlobalFilter {
     private Mono<Void> unauthorized(ServerWebExchange serverWebExchange) {
         serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
         DataBuffer buffer = serverWebExchange.getResponse()
-                .bufferFactory().wrap(HttpStatus.UNAUTHORIZED.getReasonPhrase().getBytes());
+                                             .bufferFactory().wrap(HttpStatus.UNAUTHORIZED.getReasonPhrase().getBytes());
         return serverWebExchange.getResponse().writeWith(Flux.just(buffer));
     }
 }

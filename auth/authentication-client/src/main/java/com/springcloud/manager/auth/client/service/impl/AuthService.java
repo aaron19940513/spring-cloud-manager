@@ -40,8 +40,19 @@ public class AuthService implements IAuthService {
      * 不需要网关签权的url配置(/oauth,/open)
      * 默认/oauth开头是不需要的
      */
-    @Value("${gate.ignore.authentication.startWith}")
+    @Value("${gate.authentication.ignore.startWith}")
     private String ignoreUrls = "/oauth";
+
+    /**
+     * 是否开启鉴权
+     */
+    @Value("${gate.authentication.enable}")
+    private boolean enableAuthentication;
+
+    @Override
+    public boolean enableAuthentication() {
+        return enableAuthentication;
+    }
 
     @Override
     public Result authenticate(String authentication, String url, String method) {
