@@ -1,7 +1,7 @@
 package com.springcloud.manager.authorization.entity;
 
 
-import com.springboot.cloud.common.core.entity.po.BasePo;
+import com.springcloud.manager.common.core.entity.po.BasePo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

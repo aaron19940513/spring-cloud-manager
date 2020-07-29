@@ -1,6 +1,6 @@
 package com.springcloud.manager.sysadmin.organization.entity.form;
 
-import com.springboot.cloud.common.web.entity.form.BaseForm;
+import com.springcloud.manager.common.web.entity.form.BaseForm;
 import com.springcloud.manager.sysadmin.organization.entity.po.Role;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

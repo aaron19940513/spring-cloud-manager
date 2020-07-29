@@ -1,7 +1,7 @@
 package com.springcloud.manager.auth.authentication.rest;
 
 import com.springcloud.manager.auth.authentication.service.IAuthenticationService;
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

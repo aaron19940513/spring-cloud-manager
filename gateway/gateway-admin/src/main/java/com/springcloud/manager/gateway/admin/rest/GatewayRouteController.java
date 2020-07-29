@@ -1,6 +1,6 @@
 package com.springcloud.manager.gateway.admin.rest;
 
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 import com.springcloud.manager.gateway.admin.entity.form.GatewayRouteForm;
 import com.springcloud.manager.gateway.admin.entity.form.GatewayRouteQueryForm;
 import com.springcloud.manager.gateway.admin.entity.param.GatewayRouteQueryParam;

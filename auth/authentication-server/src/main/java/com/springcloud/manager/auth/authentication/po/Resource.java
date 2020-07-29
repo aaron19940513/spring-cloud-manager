@@ -1,6 +1,6 @@
 package com.springcloud.manager.auth.authentication.po;
 
-import com.springboot.cloud.common.core.entity.po.BasePo;
+import com.springcloud.manager.common.core.entity.po.BasePo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

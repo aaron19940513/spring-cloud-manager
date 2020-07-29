@@ -1,6 +1,6 @@
 package com.springcloud.manager.authorization.exception;
 
-import com.springboot.cloud.common.core.exception.ErrorType;
+import com.springcloud.manager.common.core.exception.ErrorType;
 import lombok.Getter;
 
 @Getter

@@ -1,6 +1,6 @@
 package com.springcloud.book.consumer.config;
 
-import com.springboot.cloud.common.web.interceptor.FeignUserContextInterceptor;
+import com.springcloud.manager.common.web.interceptor.FeignUserContextInterceptor;
 import com.springcloud.book.consumer.interceptor.FeignRequestInterceptor;
 import feign.Feign;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

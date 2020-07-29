@@ -3,6 +3,7 @@ package com.springcloud.manager.sysadmin.organization.config;
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.springcloud.manager.common.web.interceptor.AuditInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @Configuration
 @MapperScan("com.springcloud.manager.sysadmin.organization.dao")
-@ComponentScan(basePackageClasses = com.springboot.cloud.common.web.interceptor.AuditInterceptor.class)
+@ComponentScan(basePackageClasses = AuditInterceptor.class)
 public class MybatisConfig {
     /**
      * 初使化Mybatis审计字段自动赋值的interceptor

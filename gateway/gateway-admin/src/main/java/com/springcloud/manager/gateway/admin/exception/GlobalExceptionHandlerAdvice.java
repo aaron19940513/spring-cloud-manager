@@ -1,7 +1,7 @@
 package com.springcloud.manager.gateway.admin.exception;
 
-import com.springboot.cloud.common.core.entity.vo.Result;
-import com.springboot.cloud.common.web.exception.DefaultGlobalExceptionHandlerAdvice;
+import com.springcloud.manager.common.core.entity.vo.Result;
+import com.springcloud.manager.common.web.exception.DefaultGlobalExceptionHandlerAdvice;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.ExceptionHandler;

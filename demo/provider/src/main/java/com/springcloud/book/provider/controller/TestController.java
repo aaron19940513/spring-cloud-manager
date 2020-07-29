@@ -1,6 +1,6 @@
 package com.springcloud.book.provider.controller;
 
-import com.springboot.cloud.common.core.util.UserContextHolder;
+import com.springcloud.manager.common.core.util.UserContextHolder;
 import com.springcloud.book.provider.model.CachedUser;
 import com.springcloud.book.provider.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;

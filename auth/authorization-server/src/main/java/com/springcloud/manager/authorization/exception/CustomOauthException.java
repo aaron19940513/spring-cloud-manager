@@ -1,7 +1,7 @@
 package com.springcloud.manager.authorization.exception;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;

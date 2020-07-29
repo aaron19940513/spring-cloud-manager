@@ -1,7 +1,7 @@
 package com.springcloud.manager.auth.authentication.provider;
 
 import com.springcloud.manager.auth.authentication.po.Resource;
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 
 import java.util.HashSet;
 import java.util.Set;

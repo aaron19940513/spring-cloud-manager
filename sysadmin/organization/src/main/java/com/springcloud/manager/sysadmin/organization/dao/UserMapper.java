@@ -3,7 +3,7 @@ package com.springcloud.manager.sysadmin.organization.dao;
 import java.util.List;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.springboot.cloud.common.core.entity.vo.UserInfo;
+import com.springcloud.manager.common.core.entity.vo.UserInfo;
 import com.springcloud.manager.sysadmin.organization.entity.po.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

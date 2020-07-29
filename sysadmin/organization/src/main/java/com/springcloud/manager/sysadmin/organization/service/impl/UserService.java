@@ -11,7 +11,7 @@ import com.alicp.jetcache.anno.Cached;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.springboot.cloud.common.core.entity.vo.UserInfo;
+import com.springcloud.manager.common.core.entity.vo.UserInfo;
 import com.springcloud.manager.sysadmin.organization.dao.UserMapper;
 import com.springcloud.manager.sysadmin.organization.entity.param.UserQueryParam;
 import com.springcloud.manager.sysadmin.organization.entity.po.User;

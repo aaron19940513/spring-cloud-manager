@@ -1,6 +1,6 @@
 package com.springcloud.manager.sysadmin.organization.rest;
 
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 import com.springcloud.manager.sysadmin.organization.entity.form.MenuForm;
 import com.springcloud.manager.sysadmin.organization.entity.form.MenuQueryForm;
 import com.springcloud.manager.sysadmin.organization.entity.param.MenuQueryParam;

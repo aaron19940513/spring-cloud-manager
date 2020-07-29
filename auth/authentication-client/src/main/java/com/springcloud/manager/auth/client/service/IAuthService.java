@@ -1,6 +1,6 @@
 package com.springcloud.manager.auth.client.service;
 
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 

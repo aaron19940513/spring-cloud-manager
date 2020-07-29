@@ -2,7 +2,7 @@ package com.springcloud.manager.authorization.provider;
 
 import com.springcloud.manager.authorization.entity.Role;
 import com.springcloud.manager.authorization.entity.User;
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 
 import java.util.HashSet;
 import java.util.Set;

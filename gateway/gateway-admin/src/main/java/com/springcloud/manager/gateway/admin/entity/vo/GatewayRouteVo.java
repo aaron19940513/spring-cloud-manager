@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springboot.cloud.common.core.entity.vo.BaseVo;
+import com.springcloud.manager.common.core.entity.vo.BaseVo;
 import com.springcloud.manager.gateway.admin.entity.po.FilterDefinition;
 import com.springcloud.manager.gateway.admin.entity.po.GatewayRoute;
 import com.springcloud.manager.gateway.admin.entity.po.PredicateDefinition;

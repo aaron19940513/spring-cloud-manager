@@ -1,6 +1,6 @@
 package com.springcloud.book.consumer.controller;
 
-import com.springboot.cloud.common.core.util.UserContextHolder;
+import com.springcloud.manager.common.core.util.UserContextHolder;
 import com.springcloud.book.consumer.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

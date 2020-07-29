@@ -1,6 +1,6 @@
 package com.springcloud.manager.sysadmin.organization.entity.vo;
 
-import com.springboot.cloud.common.core.entity.vo.BaseVo;
+import com.springcloud.manager.common.core.entity.vo.BaseVo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

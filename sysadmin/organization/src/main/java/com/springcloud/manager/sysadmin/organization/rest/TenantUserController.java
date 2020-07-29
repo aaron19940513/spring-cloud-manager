@@ -2,7 +2,7 @@ package com.springcloud.manager.sysadmin.organization.rest;
 
 import javax.validation.Valid;
 
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 import com.springcloud.manager.sysadmin.organization.entity.form.TenantUserRelationForm;
 import com.springcloud.manager.sysadmin.organization.entity.form.TenantUserRelationQueryForm;
 import com.springcloud.manager.sysadmin.organization.entity.param.TenantUserRelationQueryParam;

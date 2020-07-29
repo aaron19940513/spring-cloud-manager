@@ -1,6 +1,6 @@
 package com.springcloud.manager.sysadmin.organization.exception;
 
-import com.springboot.cloud.common.web.exception.DefaultGlobalExceptionHandlerAdvice;
+import com.springcloud.manager.common.web.exception.DefaultGlobalExceptionHandlerAdvice;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice

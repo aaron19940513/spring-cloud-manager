@@ -4,7 +4,7 @@ import java.util.stream.Stream;
 
 import com.springcloud.manager.auth.client.provider.AuthProvider;
 import com.springcloud.manager.auth.client.service.IAuthService;
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jws;

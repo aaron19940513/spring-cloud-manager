@@ -5,7 +5,7 @@ import java.util.Set;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.springboot.cloud.common.core.entity.po.BasePo;
+import com.springcloud.manager.common.core.entity.po.BasePo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,7 +1,7 @@
 package com.springcloud.manager.gateway.exception;
 
-import com.springboot.cloud.common.core.entity.vo.Result;
-import com.springboot.cloud.common.core.exception.SystemErrorType;
+import com.springcloud.manager.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.exception.SystemErrorType;
 import io.netty.channel.ConnectTimeoutException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.support.NotFoundException;

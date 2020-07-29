@@ -2,7 +2,7 @@ package com.springcloud.manager.sysadmin.organization.rest;
 
 import javax.validation.Valid;
 
-import com.springboot.cloud.common.core.entity.vo.Result;
+import com.springcloud.manager.common.core.entity.vo.Result;
 import com.springcloud.manager.sysadmin.organization.entity.form.PositionForm;
 import com.springcloud.manager.sysadmin.organization.entity.param.PositionQueryParam;
 import com.springcloud.manager.sysadmin.organization.entity.po.Position;

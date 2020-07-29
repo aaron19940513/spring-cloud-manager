@@ -1,6 +1,6 @@
 package com.springcloud.manager.gateway.admin.entity.po;
 
-import com.springboot.cloud.common.core.entity.po.BasePo;
+import com.springcloud.manager.common.core.entity.po.BasePo;
 import lombok.*;
 
 @EqualsAndHashCode(callSuper = true)

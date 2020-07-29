@@ -4,7 +4,7 @@ import java.util.Date;
 
 import javax.validation.constraints.Past;
 
-import com.springboot.cloud.common.web.entity.form.BaseQueryForm;
+import com.springcloud.manager.common.web.entity.form.BaseQueryForm;
 import com.springcloud.manager.sysadmin.organization.entity.param.TenantQueryParam;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
