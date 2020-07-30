@@ -53,3 +53,6 @@ mybatis-plus:
       id-type: 0 # 0为AUTO
       logic-delete-value: "Y" # 逻辑已删除值(默认为 Y)
       logic-not-delete-value: "N" # 逻辑未删除值(默认为 N)
+ribbon:
+  ReadTimeout: 600000
+  ConnectTimeout: 600000

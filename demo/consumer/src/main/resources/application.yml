@@ -34,8 +34,8 @@ management:
       exposure:
         include: hystrix.stream
 ribbon:
-  ConnectTimeout: 6000
-  ReadTimeout: 6000
+  ConnectTimeout: 600000
+  ReadTimeout: 600000
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 0
 hystrix:

@@ -28,7 +28,7 @@ spring:
       default-filters:
       - name: Retry
         args:
-          retries: 3
+          retries: 1
           statuses: BAD_GATEWAY
       - AddResponseHeader=X-Response-Default-Foo, Default-Bar
       - name: RequestRateLimiter
@@ -44,6 +44,8 @@ gate:
     enable: true
     ignore:
       startWith: /oauth,/open
+    resource:
+      enable: false
 
 management:
   endpoints:

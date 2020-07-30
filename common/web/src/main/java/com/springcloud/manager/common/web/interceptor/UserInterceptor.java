@@ -41,7 +41,9 @@ public class UserInterceptor implements HandlerInterceptor {
 
     private void checkToken(String token) {
         //TODO 从网关获取并校验,通过校验就可信任x-client-token-user中的信息
-        log.debug("//TODO 校验token:{}", token);
+        if(log.isDebugEnabled()){
+            log.debug("//TODO 校验token:{}", token);
+        }
     }
 
     @Override

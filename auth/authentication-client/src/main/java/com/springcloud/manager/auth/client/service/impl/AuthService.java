@@ -37,6 +37,12 @@ public class AuthService implements IAuthService {
     private String signingKey;
 
     /**
+     * 是否开启鉴权
+     */
+    @Value("${gate.authentication.enable}")
+    private boolean enableAuthentication;
+
+    /**
      * 不需要网关签权的url配置(/oauth,/open)
      * 默认/oauth开头是不需要的
      */
@@ -44,14 +50,14 @@ public class AuthService implements IAuthService {
     private String ignoreUrls = "/oauth";
 
     /**
-     * 是否开启鉴权
+     * 是否资源鉴权
      */
-    @Value("${gate.authentication.enable}")
-    private boolean enableAuthentication;
+    @Value("${gate.authentication.resource.enable}")
+    private boolean enableResourceAuthentication;
 
     @Override
-    public boolean enableAuthentication() {
-        return enableAuthentication;
+    public boolean skipAuthentication() {
+        return !enableAuthentication;
     }
 
     @Override
@@ -82,7 +88,7 @@ public class AuthService implements IAuthService {
             return Boolean.FALSE;
         }
         //从认证服务获取是否有权限,远程调用
-        return hasPermission(authenticate(authentication, url, method));
+        return skipResourceAuthentication() || hasPermission(authenticate(authentication, url, method));
     }
 
     @Override
@@ -106,5 +112,9 @@ public class AuthService implements IAuthService {
             log.error("user token error :{}", ex.getMessage());
         }
         return invalid;
+    }
+
+    private boolean skipResourceAuthentication(){
+        return !enableResourceAuthentication;
     }
 }

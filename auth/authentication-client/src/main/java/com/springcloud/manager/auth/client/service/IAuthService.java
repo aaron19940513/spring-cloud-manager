@@ -19,7 +19,7 @@ public interface IAuthService {
      * 是否开启签权
      * @return
      */
-    boolean enableAuthentication();
+    boolean skipAuthentication();
 
     /**
      * 判断url是否在忽略的范围内
