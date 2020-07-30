@@ -17,7 +17,7 @@ public interface IUserService {
     String helloFeign();
 
     /**
-     * feign请求结果是一个图片流，怎么接收
+     * feign请求结果是一个图片流，怎么接收123
      * 生成图片验证码
      *
      * @param imagekey
